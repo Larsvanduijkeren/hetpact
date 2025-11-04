@@ -1,0 +1,58 @@
+section {
+    ul,
+    ol {
+        margin: 0 0 20px 0;
+        padding: 0;
+
+        li {
+            margin: 0 0 5px 17px;
+            padding: 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+section:not(.text-image.cover):not(.hero):not(.grey):not(.blue) {
+    overflow: hidden;
+
+    + section:not(.text-image.cover):not(.hero):not(.grey):not(.blue) .container {
+        padding-top: 0 !important;
+    }
+}
+
+section:not(.text-image.cover):not(.hero).grey {
+    background: $grey;
+
+    + section:not(.text-image.cover):not(.hero).grey .container {
+        padding-top: 0 !important;
+    }
+}
+
+section:not(.text-image.cover):not(.hero).blue {
+    background: $dark-blue;
+    color: $white;
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5 {
+        color: $white;
+    }
+
+    a {
+        color: $white;
+    }
+
+    + section:not(.text-image.cover):not(.hero).blue .container {
+        padding-top: 0 !important;
+    }
+}
