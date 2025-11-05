@@ -41,6 +41,10 @@ section.text-image {
     &.cover {
         position: relative;
 
+        .container {
+            position: static;
+        }
+
         &.media-first {
             .content {
                 margin-left: auto;

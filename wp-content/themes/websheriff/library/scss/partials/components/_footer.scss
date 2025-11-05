@@ -5,4 +5,53 @@ footer {
         color: $light-green;
         margin: 0;
     }
+
+    .logo {
+        display: block;
+        height: 100px;
+        margin-bottom: 48px;
+    }
+
+    .flex-wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin: -20px;
+        color: $light-green;
+
+        a {
+            color: $light-green;
+        }
+
+        > * {
+max-width: 400px;
+            margin: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    footer {
+        .logo {
+            height: auto;
+            width: 100%;
+        }
+
+        .flex-wrapper {
+            display: block;
+            margin: 0;
+
+            > * {
+                width: 100%;
+                max-width: 100%;
+                flex-basis: 100%;
+                margin: 0 0 20px 0;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
 }
