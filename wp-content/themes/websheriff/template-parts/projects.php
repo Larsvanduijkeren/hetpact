@@ -26,7 +26,7 @@ $projects = $query->posts;
     } ?>"
 >
     <div class="container">
-        <div class="content">
+        <div class="content" data-aos="fade-up">
             <?php if (empty($title) === false) : ?>
                 <h2><?php echo $title; ?></h2>
             <?php endif; ?>
@@ -38,9 +38,17 @@ $projects = $query->posts;
 
         <?php if (empty($projects) === false) : ?>
             <div class="projects-grid">
-                <?php foreach ($projects as $project) : ?>
-                    <a href="<?php echo get_the_permalink($project); ?>" class="project">
-                        <?php echo get_the_title($project); ?>
+                <?php foreach ($projects as $project) :
+                    $project_image = get_field('hero_image', $project);
+                    ?>
+                    <a data-aos="fade-up" href="<?php echo get_the_permalink($project); ?>" class="project">
+                        <?php if (empty($project_image) === false) : ?>
+                        <span class="image">
+                                <img src="<?php echo $project_image['sizes']['large']; ?>" alt="<?php echo $project_image['alt']; ?>">
+                        </span>
+                        <?php endif; ?>
+
+                        <h3 class="h4"><?php echo get_the_title($project); ?></h3>
                     </a>
                 <?php endforeach; ?>
             </div>

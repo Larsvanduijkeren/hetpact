@@ -15,7 +15,7 @@ $id = get_field('id');
     } ?>"
 >
     <div class="container">
-        <div class="content">
+        <div class="content" data-aos="fade-up">
             <?php if (empty($title) === false) : ?>
                 <h2><?php echo $title; ?></h2>
             <?php endif; ?>

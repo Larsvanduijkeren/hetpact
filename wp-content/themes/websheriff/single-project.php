@@ -49,9 +49,18 @@ $id = get_field('id');
 
             <?php if (empty($related_municipalities) === false) : ?>
                 <div class="municipalities-grid">
-                    <?php foreach ($related_municipalities as $person) : ?>
-                        <a href="<?php echo get_the_permalink($person); ?>" class="person">
-                            <?php echo get_the_title($person); ?>
+                    <?php foreach ($related_municipalities as $municipality) :
+                        $municipality_logo = get_field('logo', $municipality);
+                        ?>
+                        <a data-aos="fade-up" href="<?php echo get_the_permalink($municipality); ?>" class="person">
+                            <?php if (empty($municipality_logo) === false) : ?>
+                                <span class="logo">
+                                    <img src="<?php echo $municipality_logo['sizes']['large']; ?>"
+                                         alt="<?php echo $municipality_logo['alt']; ?>">
+                                </span>
+                            <?php endif; ?>
+
+                            <h3 class="h4"><?php echo get_the_title($municipality); ?></h3>
                         </a>
                     <?php endforeach; ?>
                 </div>
@@ -75,9 +84,18 @@ $id = get_field('id');
 
             <?php if (empty($related_people) === false) : ?>
                 <div class="people-grid">
-                    <?php foreach ($related_people as $person) : ?>
-                        <a href="<?php echo get_the_permalink($person); ?>" class="person">
-                            <?php echo get_the_title($person); ?>
+                    <?php foreach ($related_people as $person) :
+                        $person_image = get_field('hero_image', $person);
+                        ?>
+                        <a data-aos="fade-up" href="<?php echo get_the_permalink($person); ?>" class="person">
+                            <?php if (empty($person_image) === false) : ?>
+                                <span class="image">
+                                    <img src="<?php echo $person_image['sizes']['large']; ?>"
+                                         alt="<?php echo $person_image['alt']; ?>">
+                                </span>
+                            <?php endif; ?>
+
+                            <h3 class="h4"><?php echo get_the_title($person); ?></h3>
                         </a>
                     <?php endforeach; ?>
                 </div>

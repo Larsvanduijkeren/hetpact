@@ -1,8 +1,32 @@
 section.hero {
     position: relative;
     height: 80vh;
-    max-height: 800px;
+    max-height: 900px;
     padding-top: 150px;
+
+    &.single-post-hero {
+        height: auto;
+
+        .content {
+            padding: 40px;
+            background: $green;
+            color: $white;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 80px;
+
+            h1,
+            h2 {
+                color: $white;
+
+            }
+
+            > *:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 
     .image {
         position: absolute;
@@ -28,7 +52,7 @@ section.hero {
         justify-content: center;
         height: 100%;
 
-        .logo    {
+        .logo {
             width: 60%;
         }
     }

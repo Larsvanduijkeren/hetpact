@@ -21,14 +21,41 @@ section.projects {
             max-width: calc(25% - 40px);
             flex-basis: calc(25% - 40px);
             margin: 20px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: $grey;
-            font-size: 1.5rem;
-            border-radius: 20px;
-            color: $text !important;
+            text-align: center;
+
+            &:hover,
+            &:focus {
+                .image img {
+                    width: 110%;
+                    height: 110%;
+                }
+            }
+
+            .image {
+                display: block;
+                position: relative;
+                border-radius: 20px;
+                overflow: hidden;
+                margin-bottom: 20px;
+
+                &:before {
+                    content: '';
+                    padding-top: 125%;
+                    display: block;
+                }
+
+                img {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 101%;
+                    height: 101%;
+                    object-fit: cover;
+                    object-position: center;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
         }
     }
 }
@@ -40,7 +67,6 @@ section.projects {
         flex-basis: calc(50% - 40px);
     }
 }
-
 
 @media only screen and (max-width: 600px) {
     section.projects .projects-grid {

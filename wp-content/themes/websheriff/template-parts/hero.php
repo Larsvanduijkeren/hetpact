@@ -19,7 +19,7 @@ $id = get_field('id');
 
     <div class="container">
         <?php if (empty($logo) === false) : ?>
-            <img class="logo" src="<?php echo $logo['sizes']['medium']; ?>" alt="<?php echo $logo['alt']; ?>">
+            <img data-aos="fade-up" class="logo" src="<?php echo $logo['sizes']['medium']; ?>" alt="<?php echo $logo['alt']; ?>">
         <?php endif; ?>
     </div>
 </section>
