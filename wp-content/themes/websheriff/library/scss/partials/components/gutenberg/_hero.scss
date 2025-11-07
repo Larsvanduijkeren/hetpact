@@ -62,5 +62,9 @@ section.hero {
     section.hero {
         padding-top: 60px;
         max-height: 600px;
+
+        &.single-post-hero .content {
+            padding: 20px;
+        }
     }
 }
