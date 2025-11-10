@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
+    font-family: 'Geomanist';
+    src: url('../library/fonts/Geomanist-Bold.eot'),
+    url('../library/fonts/Geomanist-Bold.woff') format('woff'),
+    url('../library/fonts/Geomanist-Bold.wof2f') format('woff2'),
+    url('../library/fonts/Geomanist-Bold.ttf') format('truetype'),
+    url('../library/fonts/Geomanist-Bold.svg') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
     font-family: 'Iconfont';
     src: url('../library/fonts/icomoon.eot'),
     url('../library/fonts/icomoon.woff') format('woff'),

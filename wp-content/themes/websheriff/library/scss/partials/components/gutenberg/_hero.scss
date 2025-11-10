@@ -16,6 +16,10 @@ section.hero {
             margin: 0 auto;
             margin-top: 80px;
 
+            a {
+                color: $white;
+            }
+
             h1,
             h2 {
                 color: $white;

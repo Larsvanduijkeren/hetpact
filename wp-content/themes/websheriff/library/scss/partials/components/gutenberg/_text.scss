@@ -10,6 +10,14 @@ section.text {
         > *:last-child {
             margin-bottom: 0;
         }
+
+        .share {
+            opacity: .75;
+            font-size: .9rem;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
     }
 }
 
