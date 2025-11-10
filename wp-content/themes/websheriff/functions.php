@@ -34,6 +34,16 @@ function disable_specific_shortcodes_in_gutenberg($content) {
     return $content;
 }
 
+# Disables Gutenberg for custom post types
+add_filter( 'use_block_editor_for_post_type', 'my_disable_gutenberg', 10, 2 );
+
+function my_disable_gutenberg( $current_status, $post_type ) {
+
+    $disabled_post_types = [ 'post' ];
+
+    return ! in_array( $post_type, $disabled_post_types, true );
+}
+
 // Make sure all content is pasted as text
 add_filter('tiny_mce_before_init', 'ag_tinymce_paste_as_text');
 function ag_tinymce_paste_as_text($init)
