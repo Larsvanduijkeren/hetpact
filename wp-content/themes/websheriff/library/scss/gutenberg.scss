@@ -1,6 +1,18 @@
 // Global variables
 @import "modules/variables.scss";
 
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('../library/fonts/Geomanist-Bold.eot'),
+    url('../library/fonts/Geomanist-Bold.woff') format('woff'),
+    url('../library/fonts/Geomanist-Bold.wof2f') format('woff2'),
+    url('../library/fonts/Geomanist-Bold.ttf') format('truetype'),
+    url('../library/fonts/Geomanist-Bold.svg') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+
 @font-face {
     font-family: 'Iconfont';
     src: url('../library/fonts/icomoon.eot'),
@@ -9,12 +21,6 @@
         url('../library/fonts/icomoon.svg') format('svg');
     font-style: normal;
     font-weight: normal;
-}
-
-.block-editor-block-list__block:not(.wp-block-acf-hero):not(.wp-block-acf-simple-hero) + .block-editor-block-list__block {
-    .container {
-        padding-top: 0 !important;
-    }
 }
 
 .block-editor-block-list__block:not(.is-selected):not(.editor-post-title) {
@@ -73,6 +79,14 @@
     .highlight {
         color: $text;
         background: transparent;
+    }
+
+    section.hero {
+        padding-top: 0 !important;
+    }
+
+    section.text-image.cover .image {
+        width: 50% !important;
     }
 }
 

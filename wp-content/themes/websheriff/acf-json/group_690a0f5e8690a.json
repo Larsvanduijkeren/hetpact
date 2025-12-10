@@ -3,35 +3,9 @@
     "title": "PT: Project",
     "fields": [
         {
-            "key": "field_690a40515d463",
-            "label": "Hero image",
+            "key": "field_69397adb8fae2",
+            "label": "Image",
             "name": "hero_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0,
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_690a40575d464",
-            "label": "Hero logo",
-            "name": "hero_logo",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -136,5 +110,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1762279518
+    "modified": 1765374742
 }

@@ -1,8 +1,8 @@
 <?php
 get_header();
 
-$hero_image = get_field('hero_image');
-$hero_logo = get_field('hero_logo');
+$hero_image = get_field('projects_hero_image', 'option');
+$hero_logo = get_field('projects_hero_logo', 'option');
 
 $related_people = get_field('person');
 $related_municipalities = get_field('municipality');
