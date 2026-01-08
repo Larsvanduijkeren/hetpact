@@ -1,6 +1,8 @@
 <?php
 get_header();
 
+$images = get_field('images');
+
 $post_id        = get_the_ID();
 $featured_image = get_the_post_thumbnail_url($post_id, 'full');
 $thumbnail_id   = get_post_thumbnail_id($post_id);
@@ -58,5 +60,26 @@ $categories     = get_the_category($post_id);
         </div>
     </div>
 </section>
+
+<?php if (empty($images) === false) : ?>
+    <section
+        class="gallery grey"
+        id="<?php if (empty($id) === false) {
+            echo $id;
+        } ?>"
+    >
+        <div class="container">
+            <?php if (empty($images) === false) : ?>
+                <div class='slider' data-aos="fade-up">
+                    <?php foreach ($images as $image) : ?>
+                        <div class='slide'>
+                            <img src='<?php echo $image['sizes']['large']; ?>' alt='<?php echo $image['alt']; ?>'>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+<?php endif; ?>
 
 <?php get_footer(); ?>

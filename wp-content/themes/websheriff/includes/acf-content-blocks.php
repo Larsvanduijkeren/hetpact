@@ -26,6 +26,7 @@ add_action('acf/init', function () {
             'people'         => 'People',
             'municipalities' => 'Municipalities',
             'posts'          => 'Posts',
+            'gallery'        => 'Gallery',
         ];
 
 

@@ -6,6 +6,7 @@ jQuery.noConflict();
         menu();
         accordion();
         headerController();
+        imageSlider();
 
         if ($(window).width() > 991) {
             lenis();
@@ -21,6 +22,31 @@ jQuery.noConflict();
             });
         }
     });
+
+    let imageSlider = function () {
+        let slider = $('.gallery .slider');
+
+        if (slider && slider.length > 0) {
+            slider.slick({
+                infinite: true,
+                dots: false,
+                arrows: false,
+                speed: 15000,
+                autoplay: true,
+                autoplaySpeed: 0,
+                cssEase: 'linear',
+                swipeToSlide: false,
+                draggable: false,
+                swipe: false,
+                touchMove: false,
+                pauseOnFocus: false,
+                pauseOnHover: false,
+                mobileFirst: false,
+                variableWidth: true,
+            });
+        }
+    };
+
 
     let headerController = function () {
         let scrollWrapper = $(window);

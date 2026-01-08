@@ -4,6 +4,7 @@ get_header();
 $hero_image = get_field('projects_hero_image', 'option');
 $hero_logo = get_field('projects_hero_logo', 'option');
 
+$images = get_field('images');
 $related_people = get_field('person');
 $related_municipalities = get_field('municipality');
 
@@ -25,6 +26,27 @@ $id = get_field('id');
         </div>
     </section>
 
+<?php if (empty($images) === false) : ?>
+    <section
+        class="gallery"
+        id="<?php if (empty($id) === false) {
+            echo $id;
+        } ?>"
+    >
+        <div class="container">
+            <?php if (empty($images) === false) : ?>
+                <div class='slider' data-aos="fade-up">
+                    <?php foreach ($images as $image) : ?>
+                        <div class='slide'>
+                            <img src='<?php echo $image['sizes']['large']; ?>' alt='<?php echo $image['alt']; ?>'>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+<?php endif; ?>
+
     <section class="text grey center">
         <div class="container">
             <div class="content">
@@ -35,7 +57,6 @@ $id = get_field('id');
     </section>
 
 <?php if (empty($related_municipalities) === false) : ?>
-
     <section
         class="municipalities"
         id="<?php if (empty($id) === false) {
