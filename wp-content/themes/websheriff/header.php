@@ -10,29 +10,42 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-
+    
     <?php wp_head(); ?>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5S70MV725R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-5S70MV725R');
+    </script>
 </head>
 <?php
-wp_body_open();
-
-$page_theme = get_field('page_theme');
+    wp_body_open();
+    
+    $page_theme = get_field('page_theme');
 ?>
 <body <?php body_class($page_theme); ?>>
 
 <?php
-wp_body_open();
-
-if(is_singular('municipality')) {
-    $logo = get_field('logo');
-}
-
-if(empty($logo) === true) {
-    $logo = get_field('logo', 'option');
-
-}
-
-$buttons = get_field('buttons', 'option');
+    wp_body_open();
+    
+    if (is_singular('municipality')) {
+        $logo = get_field('logo');
+    }
+    
+    if (empty($logo) === true) {
+        $logo = get_field('logo', 'option');
+        
+    }
+    
+    $buttons = get_field('buttons', 'option');
 ?>
 
 <span class="hamburger">
@@ -58,7 +71,7 @@ $buttons = get_field('buttons', 'option');
                     <img src='<?php echo $logo['sizes']['large']; ?>' alt='<?php echo $logo['alt']; ?>'>
                 <?php endif; ?>
             </a>
-
+            
             <?php wp_nav_menu(['theme_location' => 'header-nav']); ?>
         </div>
     </div>
