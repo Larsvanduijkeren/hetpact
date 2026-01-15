@@ -77,7 +77,8 @@
                 "id": ""
             },
             "choices": {
-                "all": "All"
+                "all": "All",
+                "year": "Year"
             },
             "default_value": "all",
             "return_format": "value",
@@ -89,6 +90,40 @@
             "placeholder": "",
             "create_options": 0,
             "save_options": 0
+        },
+        {
+            "key": "field_6968f7cdf038e",
+            "label": "Year",
+            "name": "year",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_690a06612fba3",
+                        "operator": "==",
+                        "value": "year"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "project_year",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -110,5 +145,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1762264714
+    "modified": 1768487031
 }

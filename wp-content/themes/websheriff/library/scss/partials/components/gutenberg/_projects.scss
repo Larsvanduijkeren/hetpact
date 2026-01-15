@@ -2,10 +2,30 @@ section.projects {
     .content {
         max-width: 800px;
         text-align: center;
-        margin: 0 auto;
+        margin: 0 auto 40px auto;
 
         > *:last-child {
             margin-bottom: 0;
+        }
+    }
+
+    .projects-year {
+        margin-bottom: 40px;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+        padding-bottom: 40px;
+
+        .projects-year__title {
+            text-align: center;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border: none;
+        }
+
+        .projects-grid {
+            margin-top: 0;
         }
     }
 
@@ -61,10 +81,16 @@ section.projects {
 }
 
 @media only screen and (max-width: 991px) {
-    section.projects .projects-grid > * {
-        width: calc(50% - 40px);
-        max-width: calc(50% - 40px);
-        flex-basis: calc(50% - 40px);
+    section.projects {
+        .content {
+            margin-bottom: 20px;
+        }
+
+        .projects-grid > * {
+            width: calc(50% - 40px);
+            max-width: calc(50% - 40px);
+            flex-basis: calc(50% - 40px);
+        }
     }
 }
 

@@ -1,6 +1,7 @@
 <?php
 include 'includes/acf-content-blocks.php';
 include 'includes/post-types.php';
+include 'includes/taxonomies.php';
 
 // ACF options page
 add_action('init', function () {

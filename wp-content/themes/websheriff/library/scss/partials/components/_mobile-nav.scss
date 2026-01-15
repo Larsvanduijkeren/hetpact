@@ -81,12 +81,8 @@
                     transition: color 0.3s ease-in-out;
 
                     &.open {
-                        color: $green;
-
                         &:after {
-                            color: $green;
-                            transform: translateY(-30%) rotate(180deg);
-
+                            transform: translateY(-50%) rotate(180deg);
                         }
 
                         + ul {
@@ -96,11 +92,11 @@
 
                     &:after {
                         @extend .icon-font;
-                        content: '\e904';
+                        content: '\e90d';
                         position: absolute;
                         right: 0;
                         top: 50%;
-                        transform: translateY(-30%);
+                        transform: translateY(-50%);
                         color: $white;
                         font-size: 1rem;
                         z-index: 5;

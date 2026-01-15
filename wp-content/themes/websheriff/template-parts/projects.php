@@ -1,57 +1,73 @@
 <?php
-$title = get_field('title');
-$text = get_field('text');
-$selection = get_field('selection');
+    $title = get_field('title');
+    $text = get_field('text');
+    $selection = get_field('selection');
+    $year = get_field('year');
+    $id = get_field('id');
+    
+    $args = [
+        'post_type'      => 'project',
+        'posts_per_page' => -1,
+        'post_status'    => 'publish',
+        'orderby'        => 'menu_order',
+        'order'          => 'asc',
+    ];
+    
+    if ($selection === 'year' && empty($year) === false) {
+        $args['tax_query'] = [
+            [
+                'taxonomy' => 'project_year',
+                'terms'    => $year,
+                'operator' => 'IN',
+            ],
+        ];
+    }
+    
+    $query = new WP_Query($args);
+    $projects = $query->posts;
 
-$id = get_field('id');
-
-$projects = [];
-
-$args = [
-    'post_type'      => 'project',
-    'posts_per_page' => -1,
-    'post_status'    => 'publish',
-    'orderby'        => 'menu_order',
-    'order'          => 'asc',
-];
-
-$query = new WP_Query($args);
-$projects = $query->posts;
 ?>
 
 <section
     class="projects"
-    id="<?php if (empty($id) === false) {
-        echo $id;
-    } ?>"
+    id="<?php echo !empty($id) ? esc_attr($id) : ''; ?>"
 >
     <div class="container">
         <div class="content" data-aos="fade-up">
-            <?php if (empty($title) === false) : ?>
-                <h2><?php echo $title; ?></h2>
+            <?php if (!empty($title)) : ?>
+                <h2><?php echo esc_html($title); ?></h2>
             <?php endif; ?>
-
-            <?php if (empty($text) === false) {
-                echo $text;
-            } ?>
+            
+            <?php if (!empty($text)) : ?>
+                <?php echo $text; ?>
+            <?php endif; ?>
         </div>
+        
+        <?php if (!empty($projects)) : ?>
 
-        <?php if (empty($projects) === false) : ?>
             <div class="projects-grid">
                 <?php foreach ($projects as $project) :
                     $project_image = get_field('hero_image', $project);
                     ?>
-                    <a data-aos="fade-up" href="<?php echo get_the_permalink($project); ?>" class="project">
-                        <?php if (empty($project_image) === false) : ?>
-                        <span class="image">
-                                <img src="<?php echo $project_image['sizes']['large']; ?>" alt="<?php echo $project_image['alt']; ?>">
-                        </span>
+                    <a
+                        href="<?php echo get_permalink($project); ?>"
+                        class="project"
+                        data-aos="fade-up"
+                    >
+                        <?php if (!empty($project_image)) : ?>
+                            <span class="image">
+                                <img
+                                    src="<?php echo esc_url($project_image['sizes']['large']); ?>"
+                                    alt="<?php echo esc_attr($project_image['alt']); ?>"
+                                >
+                            </span>
                         <?php endif; ?>
 
-                        <h3 class="h4"><?php echo get_the_title($project); ?></h3>
+                        <h4 class="h4">
+                            <?php echo esc_html(get_the_title($project)); ?>
+                        </h4>
                     </a>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
-    </div>
 </section>
